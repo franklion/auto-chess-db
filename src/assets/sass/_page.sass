@@ -4,11 +4,47 @@
 #footer
     text-align: center
 .page-content
-    height: 100vh
+    min-height: 100vh
+    padding: 0 50px
+    .inner-content
+        background-color: #fff
+        padding: 24px
+        &:nth-of-type(1)
+            margin-bottom: 3px
+        &:nth-of-type(2)  
+            min-height: 50vh
+            
+.searchCmp
+    width: 30%
 #menu
-    line-height: 64px    
+    line-height: 64px 
+    padding-left: 70px   
 #logo
-    width: 100px
     height: 100%
     float: left
-    background-color: rgba(255,255,255,.1)    
+    color: #fff
+    img
+        width: 42px
+        height: auto
+.coin-row
+    display: flex     
+.coin
+    display: block
+    user-select: none
+    width: 25px
+    height: 25px
+    line-height: 25px
+    border-radius: 50%
+    text-align: center
+    color: #fff
+    margin: 0 5px 10px 0
+    background-color: rgba(0, 0, 0, .3)
+.hero-name
+    display: inline-block
+    font-size: 16px
+    margin-right: 5px
+    margin-bottom: 9px
+    border: 1px solid #ccc
+    padding: 1px 7px
+    border-radius: 5px
+    cursor: pointer
