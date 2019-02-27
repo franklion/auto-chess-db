@@ -1,37 +1,15 @@
 import React, { Component } from 'react';
 import { Layout, Input, Row, Divider } from 'antd';
-// import Coin from '../assets/images/coin.svg'
+import Hero from './Hero';
 
 const { Content: AntdContent } = Layout;
 const Search = Input.Search;
 
 class Content extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            filteredHeros: []
-        }
-
-        
-    }
-
-    // handleHeroKeywordSearch = keyword => {
-    //     if(!keyword) return
-
-    //     // const filteredHeros = this.props.heros.filter(hero => {
-    //     //     return hero.name.indexOf(keyword) > -1
-    //     // })
-
-    //     // console.log(filteredHeros)
-    // }
-
-    
 
     render() {
         const { heros } = this.props
-     
-        
+
         return (
             <AntdContent className="page-content">
                 <div className="inner-content">
@@ -49,22 +27,27 @@ class Content extends Component {
                             <div className="hero-content" key={coin}>
                                 <Row className="coin-row">
                                     {
-                                        [...Array(+coin)].map((item, index) => <span className="coin" key={index}>＄</span>)
-                                        
+                                        [...Array(+coin)].map((item, index) => (
+                                            <span className="coin" key={index}>＄</span>
+                                        ))
                                     }
                                 </Row>
                                 <Row>
                                     {
-                                        heros[coin].map(hero => <span key={hero.id} className="hero-name">{hero.name}</span>)
+                                        heros[coin].map(hero => (
+                                            <Hero key={hero.id}
+                                                  hero={hero}
+                                                  handleShowHeroDetail={this.props.handleShowHeroDetail}   
+                                            />
+                                        ))
                                     }      
-                                </Row>
-                                    {
-                                        <Divider />
-                                    }
+                                </Row>       
+                                <Divider />   
                             </div>
                         ))
                     }
                 </div>
+                
             </AntdContent>
         );
     }

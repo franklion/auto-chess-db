@@ -158,7 +158,7 @@ const heros = [
     {
         id: getUniqueId(),
         name: '精靈龍',
-        image: 'puck_hphover.png',
+        image: 'puck.png',
         coin: 2,
         race: ['精靈', '龍', '法師'],
         skill: '幻象光球:向直線方向發射魔法球，造成150/200/350 點魔法傷害。'
