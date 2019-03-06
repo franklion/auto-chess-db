@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   handleHeroKeywordSearch = name => {
-    this.setState({ search: { ...this.state.search, name } }, () => this.handleGroupSearch() )
+    this.setState({ search: { ...this.state.search, name: name.trim() } }, () => this.handleGroupSearch() )
   }
 
   handleGroupSearch = () => {
