@@ -9,17 +9,21 @@ import Races from './assets/db/races';
 import LightBox from './components/LightBox';
 
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
-    
+
+    this.initialSearch = {
+      name: '',
+      race: 'all'
+    }
+
     this.state = {
       filteredHeros: Heros,
       isShowLightBox: false,
-      search: {
-        name: '',
-        race: 'all'
-      }
+      search: this.initialSearch
     }    
   }
 
@@ -34,9 +38,7 @@ class App extends Component {
   }
 
   handleHeroKeywordSearch = name => {
-    const { search } = this.state
-    search.name = name
-    this.setState({ search }, () => this.handleGroupSearch() )
+    this.setState({ search: { ...this.state.search, name } }, () => this.handleGroupSearch() )
   }
 
   handleGroupSearch = () => {
@@ -64,9 +66,11 @@ class App extends Component {
   handleHideHeroDetail = () => { this.setState({ isShowLightBox: false }) }
   
   handleHeroRaceSearch = race => {
-    const { search } = this.state
-    search.race = race
-    this.setState({ search }, () => this.handleGroupSearch() )
+    this.setState({ search: { ...this.state.search, race }}, () => this.handleGroupSearch() )
+  }
+
+  handleResetSearch = () => { 
+    this.setState({ filteredHeros: Heros, search: this.initialSearch }) 
   }
 
   render() {
@@ -82,8 +86,7 @@ class App extends Component {
                  handleHeroKeywordSearch={this.handleHeroKeywordSearch}
                  handleShowHeroDetail={this.handleShowHeroDetail} 
                  handleHeroRaceSearch={this.handleHeroRaceSearch}
-                 handleFocus={this.handleFocus}
-                 handleBlur={this.handleBlur}
+                 handleResetSearch={this.handleResetSearch}
                  />
 
         <LightBox isShowLightBox={isShowLightBox}
