@@ -24,7 +24,7 @@ class Content extends Component {
         return (
             <AntdContent className="page-content">
                 <div className="inner-content">
-                    <h1>Heros</h1>
+                    <h1>英雄</h1>
 
                     <Form layout="inline">
                         <FormItem>
