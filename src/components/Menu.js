@@ -5,7 +5,7 @@ import Logo from './Logo'
 
 const Menu = withRouter(props => {
     const { location } = props
-    console.log(props)
+
     return (
         <AntdMenu
             id="menu"

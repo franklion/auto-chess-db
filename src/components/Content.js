@@ -72,7 +72,7 @@ class Content extends Component {
                         
                     </Form>
                 </div>
-                <div className="inner-content">
+                {/* <div className="inner-content">
                     {
                         Object.keys(heros).map(coin => (
                             <div className="hero-content" key={coin}>
@@ -97,7 +97,7 @@ class Content extends Component {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
                 
             </AntdContent>
         );

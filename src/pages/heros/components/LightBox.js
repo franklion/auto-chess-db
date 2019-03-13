@@ -7,7 +7,7 @@ const LightBox = ({ isShowLightBox, hero, handleHideHeroDetail }) => (
         <div className="light-box">
             <div className="box">
                 <div className="btn-close" onClick={handleHideHeroDetail}></div>
-                <img src={require(`../assets/images/${hero.image}`)} alt=""/>
+                <img src={require(`@assets/images/${hero.image}`)} alt=""/>
                 <div className="box-content">
                     <Row className="box-content-row">
                         <Col span={5}>

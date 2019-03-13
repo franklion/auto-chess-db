@@ -12,7 +12,7 @@ class HomeContainer extends Component {
                 <Header />
                 <Content className="page-content">
                     <div className="inner-content">
-                        <h1>HomeContainer 666</h1>
+                        <h1>Auto Chess DB</h1>
                     </div>
                 </Content>
                 <Footer />
