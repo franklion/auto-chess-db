@@ -4,13 +4,11 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import Heros from '@assets/db/heros';
 import Races from '@assets/db/races';
-
-import SearchForm from './components/SearchForm'
-import SearchResult from './components/SearchResult'
+import SearchForm from './components/SearchForm';
+import SearchResult from './components/SearchResult';
 import LightBox from './components/LightBox';
 
 const { Content } = Layout;
-
 
 class HerosContainer extends Component {
     constructor(props) {
@@ -22,9 +20,10 @@ class HerosContainer extends Component {
         }
     
         this.state = {
+            hero:         {},
             filteredHeros : Heros,
             isShowLightBox: false,
-            search        : this.initialSearch
+            search        : this.initialSearch,
         }    
     }
 
@@ -39,7 +38,7 @@ class HerosContainer extends Component {
     }
     
     handleHeroKeywordSearch = name => {
-    this.setState({ search: { ...this.state.search, name: name.trim() } }, () => this.handleGroupSearch() )
+        this.setState({ search: { ...this.state.search, name: name.trim() } }, () => this.handleGroupSearch() )
     }
     
     handleGroupSearch = () => {
@@ -93,11 +92,11 @@ class HerosContainer extends Component {
                     />
                 </Content>
 
-                <LightBox isShowLightBox={isShowLightBox}
-                          hero={hero} 
-                          handleHideHeroDetail={this.handleHideHeroDetail}  
-                />
-
+                {
+                    isShowLightBox &&  <LightBox hero={hero} 
+                                                 handleHideHeroDetail={this.handleHideHeroDetail}  
+                                                />
+                }
                 <Footer />
             </Layout>
         );

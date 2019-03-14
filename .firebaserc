@@ -1,5 +1,5 @@
 {
   "projects": {
-    "staging": "auto-chess-db-0705"
+    "default": "auto-chess-db-0728"
   }
 }

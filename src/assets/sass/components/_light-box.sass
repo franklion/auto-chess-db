@@ -13,13 +13,16 @@
         width: 256px
         background-color: rgba(255, 255, 255, .9)
         box-shadow: 4px 6px 4px rgba(0,0,0,.3)
-        animation: fadeIn .8s
+        animation: fadeIn 1s
+    .hero-image
+        animation: fadeIn .75s ease-in
     .btn-close
         position: absolute
         right: -15px
         top: -15px
         width: 30px
         height: 30px
+        z-index: 999
         cursor: pointer
         &:before
             content: ''
@@ -43,8 +46,16 @@
             transform: translateX(15px) rotate(-405deg)
             animation: closeBtnLineRotate2 .5s ease-out
 
+    .box-image
+        width: 100%
+        height: 144px
+        display: flex
+        align-items: center
+        background-color: rgba(0,0,0,.15)
+
     .box-content
         padding: 18px 12px
+        background-color: #fff
         .box-content-row
             margin-bottom: 10px
         .desc

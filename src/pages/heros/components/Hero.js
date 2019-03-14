@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Tooltip } from 'antd';
 
 class Hero extends Component {
-    
+   
     handleShowHeroDetail = () => {
-        this.props.handleShowHeroDetail(this.props.hero)
+        const { hero, handleShowHeroDetail } = this.props
+        handleShowHeroDetail(hero)
     }
 
     render() {

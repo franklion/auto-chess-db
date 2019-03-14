@@ -3,7 +3,6 @@ const { injectBabelPlugin } = require('react-app-rewired');
 const rewireAliases = require('react-app-rewire-aliases');
 const { paths } = require('react-app-rewired');
 
-console.log(paths)
 
 module.exports = function override(config, env) {
 
