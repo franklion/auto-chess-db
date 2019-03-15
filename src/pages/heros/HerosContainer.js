@@ -10,6 +10,7 @@ import LightBox from './components/LightBox';
 
 const { Content } = Layout;
 
+
 class HerosContainer extends Component {
     constructor(props) {
         super(props);
@@ -77,7 +78,7 @@ class HerosContainer extends Component {
         const { isShowLightBox, hero } = this.state;
 
         return (
-            <Layout className="layout">
+            <Layout id="heros-page">
                 <Header />
 
                 <Content className="page-content">
